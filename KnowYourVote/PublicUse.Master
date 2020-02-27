@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PublicUse.master.cs" Inherits="KnowYourVote.PublicUse" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Home</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="CSS/bootstrap.css" rel="stylesheet" />
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/Site.css" rel="stylesheet" />
+
+    <style>
+        .dropdown1 { position: relative; display: inline-block; } 
+        .dropdown1-content { display: none; position: absolute; background-color: lightgrey; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); padding: 12px 16px; } 
+        .dropdown1:hover .dropdown1-content { display: block; } 
+        .dropbtn { background-color: black; color: white; padding: 16px; font-size: 16px; border: none; cursor: pointer; } 
+        .dropdown { position: relative; display: inline-block; } 
+        .dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); } 
+        .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; } 
+        .dropdown-content a:hover {background-color: #f1f1f1} 
+        .dropdown:hover .dropdown-content { display: block; } 
+        .dropdown:hover 
+        .dropbtn { background-color: black; } 
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" runat="server" href="~/Home.aspx">Home</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul  class="nav navbar-nav">
+                        <li><a runat="server" href="~/Schedule.aspx">Schedule</a></li>
+                        <li><a runat="server" href="~/About.aspx">About</a></li>
+                        <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
+                        <li><a runat="server" href="~/GenrateReport.aspx">Find Booth</a></li>
+                        <li style="Left: 760px">
+                            <div class="dropdown" > 
+                                <button class="dropbtn">
+                                    <asp:Label ID="Label2" runat="server" Text=">>"></asp:Label>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a runat="server" href="~/Home.aspx">Home</a>
+                                    <asp:Label ID="Label1" runat="server" Text=""><a runat="server" href="~/SignOut.aspx">Log off</a></asp:Label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - KYV</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
